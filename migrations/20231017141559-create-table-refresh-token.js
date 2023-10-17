@@ -10,7 +10,7 @@ module.exports = {
      * await queryInterface.createTable('users', { id: Sequelize.INTEGER });
      */
 
-    await queryInterface.createTable('refresh-tokens', {    
+    await queryInterface.createTable('refresh_tokens', {    
       id: {
         type:Sequelize.INTEGER,
         primaryKey:true,
@@ -35,7 +35,7 @@ module.exports = {
       }
     });
 
-    await queryInterface.addConstraint("refresh-tokens",{
+    await queryInterface.addConstraint("refresh_tokens",{
       type: "foreign key",
       name:"REFRESH_TOKENS_USER_ID",
       fields:["user_id"],
@@ -54,6 +54,6 @@ module.exports = {
      * await queryInterface.dropTable('refresh-tokens');
      */
 
-    await queryInterface.dropTable('refresh-tokens');
+    await queryInterface.dropTable('refresh_tokens');
   }
 };
