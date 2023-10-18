@@ -25,7 +25,9 @@ module.exports = (sequelize, DataTypes)=> {
             allowNull:false
         }
     },{
-        tableName:"users",
+        tableName:"refresh_tokens",
         timeStamps: true
-    })
+    });
+
+    return RefreshToken;
 }
