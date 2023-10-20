@@ -6,7 +6,7 @@ const logger = require('morgan');
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
-const refreshTokensRouter = require("./routes/resfersTokens");
+const refreshTokensRouter = require("./routes/refreshToken");
 const app = express();
 
 app.use(logger('dev'));

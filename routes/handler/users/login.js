@@ -32,25 +32,27 @@ module.exports = async (req, res) => {
         })
     }
 
-    const isValidPassword = await bcrypt.compare(req.body.password, user.password);
-
-    if(isValidPassword){
-        res.json({
-            status:"success",
-            data:{
-                id:user.id,
-                name: user.name,
-                email: user.email,
-                avatar: user.avatar,
-                profession: user.profession
-            }
-        })
-    }else{
-        res.status(404).json({
-            status:"error",
-            message:"Password Is Not Valid!"
-        });
-
+    if(user){
+        const isValidPassword = await bcrypt.compare(req.body.password, user.password);
+    
+        if(isValidPassword){
+            res.json({
+                status:"success",
+                data:{
+                    id:user.id,
+                    name: user.name,
+                    email: user.email,
+                    avatar: user.avatar,
+                    profession: user.profession
+                }
+            })
+        }else{
+            res.status(404).json({
+                status:"error",
+                message:"Password Is Not Valid!"
+            });
+    
+        }
     }
 
 }
