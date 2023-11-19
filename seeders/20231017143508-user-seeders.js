@@ -32,6 +32,15 @@ module.exports = {
         password:await bcrypt.hash("rahasia123",10),
         created_at: new Date(),
         updated_at: new Date()
+      },
+      {
+        name: 'Zein',
+        profession: "Frontend Developer",
+        role:"student",
+        email:"zein@gmail.com",
+        password:await bcrypt.hash("secretcode",10),
+        created_at: new Date(),
+        updated_at: new Date()
       }
     ], {});
   },
